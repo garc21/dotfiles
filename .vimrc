@@ -1,5 +1,3 @@
-"6/23/2021 ALBT 0.20 VXV .90 QNT 63
-
 "Setting 'nocompatible' switches from the default 
 "Vi-compatibility mode and enables useful Vim functionality. 
 "set nocompatible"
@@ -12,15 +10,13 @@ set shortmess+=I
 "Show numbers
 set number
 
-"With both number and relativenumber enables, the current line shows the true line number,
-"while all other lines (above and bellow) are numbered relative to the current line.
+"set relative number
 set relativenumber
 
 " Always show the status line at the bottom
 set laststatus=2
 
-" This configuration makes backspace behave more reasonably, in that you can backspace
-" over anything.
+" This configuration makes backspace, backspace over anything.
 set backspace=indent,eol,start
 
 " By default, Vim doesn't let you hide a buffer that has unsaved changes.
