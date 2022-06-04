@@ -1,0 +1,18 @@
+#!/bin/sh
+# Take in a directory and assign to a variable.
+# Iterate over the given directory.
+# Iterate through all the markdown files in that directory.
+# Print the first line of the markdown files.
+
+loop() {
+for dir in *;do 
+	[ -d "$dir" ] || continue 
+		for file in "$dir"/*.md; do
+			 [ -e "$file" ] || continue
+			 read -r a < "$file"
+			 echo "$file: $a"	
+		done
+done
+}
+
+loop | tac | less
