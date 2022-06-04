@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Must set an alias to path or use `.` before you call script name
 
-mkdir `isosec`; cd `isosec`;
+mkdir `isosec`;  cd `isosec`
