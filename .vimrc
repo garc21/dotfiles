@@ -11,7 +11,7 @@ set shortmess+=I
 set number
 
 "set relative number
-set relativenumber
+"set relativenumber
 
 " Always show the status line at the bottom
 set laststatus=2
