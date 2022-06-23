@@ -123,3 +123,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias '?'=duck
 alias '??'=google
 
+# alias 'pandoc.exe -sV geometry:margin=1in'=pandoc
+alias 'pandoc'="pandoc.exe -sV geometry:margin=1in"
