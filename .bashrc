@@ -117,4 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 set -o vi
+
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias '?'=duck
+alias '??'=google
+

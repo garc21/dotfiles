@@ -45,7 +45,7 @@ set noerrorbells visualbell t_vb=
 set ttyfast 
 
 " high contrast 
-"set background=dark
+set background=dark
 
 " default color changes
 hi StatusLine ctermfg=black ctermbg=NONE
