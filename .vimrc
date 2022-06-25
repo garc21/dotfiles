@@ -27,6 +27,8 @@ set hidden
 
 set smartindent
 
+set textwidth=72
+
 set smarttab
 
 set autoindent
