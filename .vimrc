@@ -2,7 +2,7 @@
 " Vi-compatibility mode and enables useful Vim functionality. 
 "set nocompatible"
 
-syntax on
+"syntax on
 
 " diable the default Vim startup message.
 set shortmess+=I
@@ -17,7 +17,6 @@ set ruler
 
 set history=100
 
-"set spell
 
 " this configuration makes backspace, backspace over anything.
 set backspace=indent,eol,start
@@ -26,6 +25,8 @@ set backspace=indent,eol,start
 set hidden
 
 set smartindent
+
+set nospell
 
 set textwidth=72
 
@@ -58,3 +59,14 @@ hi LineNr ctermfg=black ctermbg=NONE
 au FileType * hi LineNr ctermfg=black ctermbg=NONE
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
+
+
+call plug#begin('~/.vimplugins')
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'rwxrob/vim-pandoc-syntax-simple'
+call plug#end()
+
+" pandoc 
+let g:pandoc#formatting#mode = 'h' " A'
+let g:pandoc#formatting#textwidth = 72
+let g:pandoc#spell#enabled = 0
