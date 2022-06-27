@@ -53,10 +53,10 @@ set background=dark
 " default color changes
 hi StatusLine ctermfg=black ctermbg=NONE
 hi StatusLineNC ctermfg=black ctermbg=NONE
-hi LineNr ctermfg=black ctermbg=NONE
+hi LineNr ctermfg=grey ctermbg=NONE
 
 " color overrides
-au FileType * hi LineNr ctermfg=black ctermbg=NONE
+au FileType * hi LineNr ctermfg=grey ctermbg=NONE
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
 
