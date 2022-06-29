@@ -15,4 +15,4 @@ for dir in *;do
 done
 }
 
-loop | less
+loop | tac | less
