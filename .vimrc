@@ -34,20 +34,36 @@ set smarttab
 
 set autoindent
 
+set shiftwidth=2
+
+set tabstop=2
+
+set expandtab
+
+set incsearch
+
+set wrap
+
+set linebreak
+
+" mark trailing spaces as errors
+match IncSearch '\s\+$'
+
+
 " this setting makes search case-insensitive when all characters in the string being searched are lowercase.
 "set ignorecase"
 "set smartcase"
 
 " unbind useless default key bindings
-nmap Q <Nop> 
+nmap Q <Nop>
 
 " disable audible bell...
 set noerrorbells visualbell t_vb=
 
-" faster scrolling 
-set ttyfast 
+" faster scrolling
+set ttyfast
 
-" high contrast 
+" high contrast
 set background=dark
 
 " default color changes
@@ -66,7 +82,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'rwxrob/vim-pandoc-syntax-simple'
 call plug#end()
 
-" pandoc 
+" pandoc
 let g:pandoc#formatting#mode = 'h' " A'
 let g:pandoc#formatting#textwidth = 72
 let g:pandoc#spell#enabled = 0
