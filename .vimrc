@@ -44,6 +44,7 @@ set incsearch
 
 set wrap
 
+" When text runs off screen, the entire word is moved to the next line
 set linebreak
 
 " mark trailing spaces as errors
