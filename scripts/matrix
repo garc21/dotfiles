@@ -1,0 +1,23 @@
+#!/bin/sh
+
+tmp="$1"
+
+rows="${tmp%%x[0-9]}"
+columns="${tmp##[0-9]x}"
+
+str="\begin{bmatrix}"
+
+for i in $(seq 1 "$rows"); do
+  for j in $(seq 1 "$columns"); do
+    str="${str} &"
+  done
+
+  if test "$i" -eq "$rows"; then
+    str="${str} \end{bmatrix}"
+  else
+  str="${str} \\\ 
+  "
+  fi
+done
+
+printf "%s" "$str"

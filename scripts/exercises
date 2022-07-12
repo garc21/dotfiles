@@ -1,0 +1,4 @@
+#!/bin/sh
+
+num=${1:-10}
+for i in $(seq 1 "$num");do printf "%s\n\n\n\n" "### Exercise ${i}";done
