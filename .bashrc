@@ -8,37 +8,10 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -73,16 +46,16 @@ xterm*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+#if [ -x /usr/bin/dircolors ]; then
+#    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-fi
+#fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -116,15 +89,63 @@ if ! shopt -oq posix; then
   fi
 fi
 
-set -o vi
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# environment variables
+
+export TERM=xterm-256color
+export EDITOR=vi
+export VISUAL=vi
+
+export LESS_TERMCAP_mb="[35m" # magenta
+export LESS_TERMCAP_md="[33m" # yellow
+export LESS_TERMCAP_me="" # "0m"
+export LESS_TERMCAP_se="" # "0m"
+export LESS_TERMCAP_so="[34m" # blue
+export LESS_TERMCAP_ue="" # "0m"
+export LESS_TERMCAP_us="[4m" # underline
+
+# pager
+
+if [[ -x /usr/bin/lesspipe ]]; then
+    export LESSOPEN="| /usr/bin/lesspipe %s";
+      export LESSCLOSE="/usr/bin/lesspipe %s %s";
+fi
+
+# dircolors
+
+if command -v dircolors &>/dev/null; then
+  if [[ -r "$HOME/.dircolors" ]]; then
+   eval "$(dircolors -b "$HOME/.dircolors")"
+  else
+   eval "$(dircolors -b)"
+  fi
+fi
+
+alias ls='ls -h --color=auto'
+
+# bash shell options
+
+shopt -s checkwinsize
+shopt -s globstar
+
+# history
+
+set -o vi
+shopt -s histappend
+
+HISTSIZE=2000
+HISTFILESIZE=5000
+HISTCONTROL=ignoreboth
+
+# alias
 
 alias '?'=duck
 alias '??'=google
 
-alias clear='printf "\e[H\e[2J"'
 alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
 
-# alias 'pandoc.exe -sV geometry:margin=1in'=pandoc
 alias 'pandoc'="pandoc.exe -sV geometry:margin=1in"
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

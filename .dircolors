@@ -48,42 +48,8 @@ TERM screen-256color
 TERM screen-256color-bce
 TERM screen-256color-s
 TERM screen-256color-bce-s
-TERM sI-31-red 31
-.ANSI-01;31-brred 01;31
-.ANSI-32-green 32
-.ANSI-01;32-brgreen 01;32
-.ANSI-33-yellow 33
-.ANSI-01;33-bryellow 01;33
-.ANSI-34-blue 34
-.ANSI-01;34-brblue 01;34
-.ANSI-35-magenta 35
-.ANSI-01;35-brmagenta 01;35
-.ANSI-36-cyan 36
-.ANSI-01;36-brcyan 01;36
-.ANSI-37-white 37
-.ANSI-01;37-brwhite 01;37
-
-.log 01;32
-*~ 01;32
-*# 01;32
-
-.bak 01;33
-.BAK 01;33
-.old 01;33
-.OLD 01;33
-.org_archive 01;33
-.off 01;33
-.OFF 01;33
-.dist 01;33
-.DIST 01;33
-.orig 01;33
-.ORIG 01;33
-.swp 01;33
-.swo 01;33
-*,v 01;33
-.gpg 34
-.gpg 34
-reen-w
+TERM screen-bce
+TERM screen-w
 TERM screen.linux
 TERM screen.xterm-new
 TERM st
@@ -106,8 +72,6 @@ DIR 34
 OTHER_WRITABLE 34;40
 LINK 35
 FIFO 30;4ANSI-30-black 30
-.ANSI-01;30-brblack 01;30
-.ANS4
 SOCK 35;44
 DOOR 35;44 # Solaris 2.5 and later
 BLK  33;44
@@ -116,7 +80,10 @@ ORPHAN  05;37;41
 MISSING 05;37;41
 
 EXEC 31  # Unix
-.in
+.cmd 31  # Win
+.exe 31  # Win
+.com 31  # Win
+.bat 31  # Win
 .reg 31  # Win
 .app 31  # OSX
 .txt 32
@@ -149,7 +116,15 @@ EXEC 31  # Unix
 .erb 32
 .haml 32
 .xml 32
-.rdf .0 32
+.rdf 32
+.css 32
+.sass 32
+.scss 32
+.less 32
+.js 32
+.coffee 32
+.man 32
+.0 32
 .1 32
 .2 32
 .3 32
@@ -190,7 +165,15 @@ EXEC 31  # Unix
 .ps 33
 .svg 33
 .svgz 33
-..yuv 33
+.tga 33
+.tif 33
+.tiff 33
+.xbm 33
+.xcf 33
+.xpm 33
+.xwd 33
+.xwd 33
+.yuv 33
 
 # Audio
 .aac 33
@@ -214,6 +197,14 @@ EXEC 31  # Unix
 .axv 33
 .flc 33
 .fli 33
+.flv 33
+.gl 33
+.m2v 33
+.m4v 33
+.mkv 33
+.mov 33
+.mp4 33
+.mp4v 33
 .mpeg 33
 .mpg 33
 .nuv 33
@@ -257,7 +248,13 @@ EXEC 31  # Unix
 .iso  1;35
 .jar  1;35
 .msi  1;35  # Win
-.rar  1 1;35
+.rar  1;35
+.rpm  1;35
+.tar  1;35
+.tbz  1;35
+.tbz2 1;35
+.tgz  1;35
+.tx   1;35
 .war  1;35
 .xpi  1;35
 .xz   1;35
